@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XF_Demos.BaseToPDF"
+    xmlns:viewModel="clr-namespace:XF_Demos.ViewModel"
+    xmlns:XF_Demos="clr-namespace:XF_Demos"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,60,0,0"/>
+        </OnPlatform>
+
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Title bar-->
+            <XF_Demos:ContentHeaderView
+                Title="{Binding
+                Source={RelativeSource 
+                AncestorType={x:Type viewModel:Base64ToPDFViewModel}}, 
+                Path=SampleTitle}"/>
+
+            <!--Bode Part-->
+            <StackLayout VerticalOptions="FillAndExpand"/>
+
+            <!--Bottom toolbar-->
+            <XF_Demos:ContentFooterView Margin="0,0,10,50"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_Demos.ContentFooterView">
+
+    <ContentView.Content>
+        <StackLayout VerticalOptions="EndAndExpand">
+            <ImageButton 
+            x:Name="backIcon" 
+            Clicked="backIcon_Clicked" 
+            BackgroundColor="Transparent" 
+            Margin="10,50,15,10"
+            Source="back_arrow.png" 
+            HorizontalOptions="End" 
+            WidthRequest="45"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

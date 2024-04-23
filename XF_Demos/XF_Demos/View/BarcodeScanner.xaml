@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_Demos.BarcodeScanner"
+             xmlns:zing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             xmlns:XF_Demos="clr-namespace:XF_Demos"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--Header part-->
+            <XF_Demos:ContentHeaderView x:Name="Titlebar"/>
+
+            <!--Body part-->
+            <Frame HeightRequest="300" Margin="20,0,20,0" 
+                   CornerRadius="5"
+               Padding="0" 
+               BackgroundColor="WhiteSmoke">
+                <zing:ZXingScannerView x:Name="scanner" 
+                                       OnScanResult="ZXingScannerView_OnScanResult"/>
+            </Frame>
+
+            <Frame HeightRequest="200" CornerRadius="20" Margin="20,0,20,0" BackgroundColor="WhiteSmoke" HasShadow="True">
+                <StackLayout>
+                    <Label FontFamily="ubunturegular" FontSize="18" Text="Scan Result:" TextColor="Black" Grid.Row="0"/>
+                    <Label FontFamily="ubunturegular" x:Name="resultLabel" TextColor="Black" Grid.Row="1"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#0476D0" Margin="0,30,0,0" CornerRadius="25"  HeightRequest="15" HorizontalOptions="Center">
+                <Label FontSize="14" FontFamily="ubuntubold" Text="Tap to scan" BackgroundColor="#0476D0" VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Button_Clicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+            
+            <!--Footer part-->
+            <XF_Demos:ContentFooterView x:Name="BottomToolbar"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

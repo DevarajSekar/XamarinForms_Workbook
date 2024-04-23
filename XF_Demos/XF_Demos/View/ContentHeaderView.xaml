@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_Demos.ContentHeaderView">
+
+    <ContentView.Content>
+        <Frame BackgroundColor="#0476D0" HeightRequest="75" Padding="0" CornerRadius="0">
+            <Grid>
+                <Label 
+                    x:Name="HeaderLabel"
+                    Text="{Binding Title}"
+                    FontFamily="ubuntubold" 
+                    Margin="10"
+                    VerticalTextAlignment="Center" 
+                    HorizontalTextAlignment="Start" 
+                    TextColor="White" 
+                    FontSize="28"/>
+                
+                <Image 
+                    Margin="10,10,15,10" 
+                    Source="coding_.png" 
+                    HorizontalOptions="End" 
+                    WidthRequest="40">
+                    
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Tapped="TapGestureRecognizer_Tapped" 
+                            NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                    
+                </Image>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+    
+</ContentView>

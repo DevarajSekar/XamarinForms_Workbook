@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_Demos.BaseToImage"
+             xmlns:XF_Demos="clr-namespace:XF_Demos"
+             xmlns:viewModel="clr-namespace:XF_Demos.ViewModel"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,60,0,0"/>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--Title bar-->
+            <XF_Demos:ContentHeaderView 
+                Title="{Binding 
+                Source={RelativeSource 
+                AncestorType={x:Type viewModel:Base64ToImageViewModel}}, 
+                Path=SampleTitle}"
+                
+                CodeDescription="{Binding
+                Source={RelativeSource
+                AncestorType={x:Type viewModel:Base64ToImageViewModel}},
+                Path=CodeDescription}"
+                
+                CodeSnippets="{Binding 
+                Source={RelativeSource
+                AncestorType={x:Type viewModel:Base64ToImageViewModel}},
+                Path=CodeSnippet}"
+                />
+
+            <!--Body content-->
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label FontFamily="ubunturegular" Margin="10" Text="Base 64 string mentioned below, editable entry : " TextColor="Black"/>
+                <Entry Text="{Binding Base64String}" Margin="10" 
+                       BackgroundColor="WhiteSmoke" 
+                       TextColor="SlateGray" PlaceholderColor="Gray" 
+                       x:Name="inputString" FontFamily="ubunturegular" 
+                       Placeholder="{Binding PlaceHolderString}"/>
+                <Button Text="Tap to convert to an Image" CornerRadius="5" FontFamily="ubunturegular" FontSize="Large" Margin="10" Clicked="Button_Clicked"/>
+                <Image Margin="10" BackgroundColor="Transparent" WidthRequest="200" HeightRequest="200" x:Name="imageView"/>
+            </StackLayout>
+
+            <!--bottom tool bar-->
+            <XF_Demos:ContentFooterView Margin="0,0,10,50"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -25,7 +25,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Label Grid.Row="0" FontSize="20" Margin="20" x:Name="MainTitle" TextColor="Black" FontFamily="ubuntubold" Grid.Column="0"/>
-                    <ImageButton Grid.Row="0" HeightRequest="40" VerticalOptions="Start"  Margin="0,10,10,0" BackgroundColor="Transparent" x:Name="closeButton" Source="cross.png" Grid.Column="1" Clicked="closeButton_Clicked"/>
+                    <ImageButton Grid.Row="0" HeightRequest="40" VerticalOptions="Start"  Margin="0,10,10,0" BackgroundColor="Transparent" x:Name="closeButton" Source="closeicon.png" Grid.Column="1" Clicked="closeButton_Clicked"/>
                     <BoxView Margin="10,0,10,0" Grid.Row="1" Grid.ColumnSpan="2" Color="Gray" WidthRequest="1"/>
                 </Grid>
 

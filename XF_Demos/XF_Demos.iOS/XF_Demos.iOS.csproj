@@ -138,47 +138,34 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\XF_Demos\XF_Demos.csproj">
-      <Project>{D5DC7569-0EAA-4119-921E-D45BD3BC6512}</Project>
+      <Project>{C3057521-8375-4C6F-8F92-D60A6ADE0116}</Project>
       <Name>XF_Demos</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\barcodescanner1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\checked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\coding_.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <BundleResource Include="Resources\barcodescanner.png" />
+    <BundleResource Include="Resources\behaviors.png" />
+    <BundleResource Include="Resources\bluetickicon.png" />
+    <BundleResource Include="Resources\carousel.png" />
+    <BundleResource Include="Resources\closeicon.png" />
+    <BundleResource Include="Resources\codviewer.png" />
     <BundleResource Include="Resources\convert.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\cross.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\decision.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\drag.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <BundleResource Include="Resources\effects.png" />
     <BundleResource Include="Resources\googlemaps.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\openbox.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <BundleResource Include="Resources\menu.png" />
     <BundleResource Include="Resources\photo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ribbon.png" />
+    <BundleResource Include="Resources\xctlisticon.png" />
+    <BundleResource Include="Resources\multiselect.png" />
+    <BundleResource Include="Resources\popup.png" />
+    <BundleResource Include="Resources\pancake.png" />
+    <BundleResource Include="Resources\programming.png" />
+    <BundleResource Include="Resources\scribblepad.png" />
+    <BundleResource Include="Resources\yumyum.png" />
+    <BundleResource Include="Resources\textspeech.png" />
+    <BundleResource Include="Resources\darkthemeicon.png" />
+    <BundleResource Include="Resources\lightthemeicon.png" />
   </ItemGroup>
 </Project>

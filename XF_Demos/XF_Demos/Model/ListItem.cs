@@ -9,6 +9,9 @@ namespace XF_Demos
     internal class ListItem : BaseViewModel
     {
         private bool isStarListItem = false;
+        private bool isFrameworkListItem = false;
+        private bool isXCTListItem = false;
+        private Color listItemColor;
 
         public ListItem()
         {
@@ -18,8 +21,20 @@ namespace XF_Demos
         public string Name { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
-        public ICommand TapCommand { get; set; }
         
+        public ICommand TapCommand { get; set; }
+
+        public ImageSource StarItemIcon
+        {
+            get
+            {
+                if (IsXCTListItem)
+                   return ImageSource.FromFile("xctlisticon.png");
+                else
+                    return ImageSource.FromFile("bluetickicon.png");
+            }
+        }
+
         public bool IsStarListItem
         {
             get
@@ -30,6 +45,47 @@ namespace XF_Demos
             {
                 isStarListItem = value;
                 OnPropertyChanged(nameof(IsStarListItem));
+            }
+        }
+
+        public Color ListItemColor
+        {
+            get
+            {
+                return listItemColor;
+            }
+            set
+            {
+                listItemColor = value;
+                OnPropertyChanged(nameof(ListItemColor));
+            }
+        }
+
+        public bool IsFrameworkListItem
+        {
+            get
+            {
+                return isFrameworkListItem;
+            }
+            set
+            {
+                isFrameworkListItem = value;
+                IsStarListItem = value;
+                OnPropertyChanged(nameof(IsFrameworkListItem));
+            }
+        }
+
+        public bool IsXCTListItem
+        {
+            get
+            {
+                return isXCTListItem;
+            }
+            set
+            {
+                isXCTListItem = value;
+                IsStarListItem = true;
+                OnPropertyChanged(nameof(IsXCTListItem));
             }
         }
 

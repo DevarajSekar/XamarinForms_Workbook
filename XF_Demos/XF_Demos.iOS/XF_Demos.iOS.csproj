@@ -167,5 +167,6 @@
     <BundleResource Include="Resources\textspeech.png" />
     <BundleResource Include="Resources\darkthemeicon.png" />
     <BundleResource Include="Resources\lightthemeicon.png" />
+    <BundleResource Include="Resources\podcast.png" />
   </ItemGroup>
 </Project>

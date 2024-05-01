@@ -36,7 +36,7 @@ namespace XF_Demos
                 new ListItem(){ Name="Pancake View",Description="", Icon= "pancake.png"},
                 new ListItem(){ Name="Preference",Description="", Icon= "programming.png"},
                 new ListItem(){ Name="ScribblePad",Description="", Icon= "scribblepad.png", IsXCTListItem=true},
-                new ListItem(){ Name="Text to Speech",Description="", Icon= "textspeech.png", IsXCTListItem=true},
+                new ListItem(){ Name="Text to Speech",Description="", Icon= "podcast.png", IsXCTListItem=true},
                 new ListItem(){ Name="Unit Converter",Description="", Icon= "convert.png"},
                 new ListItem(){ Name="Value Converter",Description="", Icon= "convert.png"},
                 new ListItem(){ Name="Yum Yum",Description="", Icon= "yumyum.png"},

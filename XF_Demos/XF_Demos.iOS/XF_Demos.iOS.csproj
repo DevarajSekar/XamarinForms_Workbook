@@ -168,5 +168,9 @@
     <BundleResource Include="Resources\darkthemeicon.png" />
     <BundleResource Include="Resources\lightthemeicon.png" />
     <BundleResource Include="Resources\podcast.png" />
+    <BundleResource Include="Resources\bell.png" />
+    <BundleResource Include="Resources\smartphone.png" />
+    <BundleResource Include="Resources\snack.png" />
+    <BundleResource Include="Resources\toaster.png" />
   </ItemGroup>
 </Project>

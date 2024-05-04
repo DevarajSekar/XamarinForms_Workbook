@@ -12,6 +12,7 @@ namespace XF_Demos.ViewModel
         string title;
         string codeDesciption;
         string codeSnippet;
+        string dlls;
 
         public string SampleTitle
         {
@@ -39,6 +40,19 @@ namespace XF_Demos.ViewModel
             }
         }
 
+        public string DLLUsed
+        {
+            get
+            {
+                return dlls;
+            }
+            set
+            {
+                dlls = value;
+                OnPropertyChanged(DLLUsed);
+            }
+        }
+
         public string CodeSnippet
         {
             get
@@ -56,8 +70,7 @@ namespace XF_Demos.ViewModel
 
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)
         {
-            if (PropertyChanged != null)
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

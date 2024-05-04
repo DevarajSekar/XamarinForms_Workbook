@@ -6,8 +6,6 @@ namespace XF_Demos
     [ContentProperty("Child")]
     public partial class ContentHeaderView : ContentView
     {
-        string codeDescription;
-        string codeSnippet;
         public ContentHeaderView()
         {
             InitializeComponent();

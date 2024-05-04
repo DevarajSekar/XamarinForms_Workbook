@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XF_Demos.ViewModel;
 
 namespace XF_Demos
-{	
-	public partial class BaseToPDF : ContentPage
+{
+    public partial class BaseToPDF : ContentPage
 	{
 		Base64ToPDFViewModel base64ToPDFViewModel;
 		public BaseToPDF (string pageTitle)

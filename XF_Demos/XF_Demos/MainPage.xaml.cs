@@ -28,7 +28,6 @@ namespace XF_Demos
                 new ListItem(){ Name="Buttons",Description="This demo shows how implement button customization in Xamarin forms", Icon= "play.png" },
                 new ListItem(){ Name="Image To Bitmap",Description="This demo shows how to convert Xamarin  to Image content", Icon= "convert.png"},
                  new ListItem(){ Name="Carousel",Description="This demo showcases behavior and UI of carousel view control", Icon= "carousel.png"},
-                 new ListItem(){ Name="Barcode Generator",Description="This demo shows how to generate barcode in xamarin forms", Icon="barcodescanner.png"},
                  new ListItem(){ Name="Geofence and Location",Description="This demo shows how to display map, geo location pointing and fencing using XCT", Icon= "googlemaps.png"},
                  new ListItem(){ Name="Image Barcode",Description="This demo shows how to convert image to barcode in xamarin forms", Icon= "barcodescanner.png"},
                  new ListItem(){ Name="Multi Selection",Description="This demo shows how to perform multi selection of images in Xamarin forms", Icon= "multiselect.png", IsXCTListItem = true},

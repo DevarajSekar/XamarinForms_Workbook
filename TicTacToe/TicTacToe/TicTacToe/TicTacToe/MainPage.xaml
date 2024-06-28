@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.MainPage">
+
+    <StackLayout>
+        <Grid>
+        <Label Text="X"
+               WidthRequest="300"
+               Margin="-70,0,0,0"
+               FontFamily="poppinsextrabold"
+               TextColor="DodgerBlue"
+               FontSize="270"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Label Text="O"
+               WidthRequest="300"
+               FontFamily="poppinsextrabold"
+               TextColor="DarkOrange"
+               Margin="185,0,0,0"
+               FontSize="270"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+            </Grid>
+
+        <Label
+            Text="Choose your play mode"
+            FontFamily="poppinsregular"
+            HorizontalOptions="CenterAndExpand"/>
+
+        <Button
+            Text="With AI"
+            Margin="0,50,0,0"
+            BackgroundColor="DodgerBlue"
+            FontFamily="poppinsregular"
+            TextColor="White"
+            CornerRadius="23"
+            WidthRequest="150"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Button
+            Text="With Friend"
+            Margin="0,50,0,0"
+            BackgroundColor="DodgerBlue"
+            FontFamily="poppinsregular"
+            TextColor="White"
+            CornerRadius="23"
+            WidthRequest="150"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+    </StackLayout>
+
+</ContentPage>
+

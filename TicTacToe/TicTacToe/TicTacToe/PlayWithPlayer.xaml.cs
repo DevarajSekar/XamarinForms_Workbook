@@ -33,6 +33,15 @@ namespace TicTacToe
         private Color individualBoxColor;
         private Color contentPageColor;
         private Color separatorLinesColor;
+        private string boxNumber1;
+        private string boxNumber2;
+        private string boxNumber3;
+        private string boxNumber4;
+        private string boxNumber5;
+        private string boxNumber6;
+        private string boxNumber7;
+        private string boxNumber8;
+        private string boxNumber9;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -94,6 +103,45 @@ namespace TicTacToe
             {
                 separatorLinesColor = value;
                 OnPropertyChanged(nameof(SeparatorLinesColor));
+            }
+        }
+
+        public string BoxNumber1
+        {
+            get
+            {
+                return boxNumber1;
+            }
+            set
+            {
+                boxNumber1 = value;
+                OnPropertyChanged(nameof(BoxNumber1));
+            }
+        }
+
+        public string BoxNumber2
+        {
+            get
+            {
+                return boxNumber2;
+            }
+            set
+            {
+                boxNumber2 = value;
+                OnPropertyChanged(nameof(BoxNumber2));
+            }
+        }
+
+        public string BoxNumber3
+        {
+            get
+            {
+                return boxNumber3;
+            }
+            set
+            {
+                boxNumber3 = value;
+                OnPropertyChanged(nameof(BoxNumber3));
             }
         }
 

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.PlayWithPlayer"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{Binding ContentPageColor}"
+             x:Name="contentPage"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+            <Label Grid.Column="0"
+                Text="Player 1 : X"
+                   TextColor="DodgerBlue"
+                FontFamily="poppinsextrabold"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,50,0,0"
+                FontSize="24"/>
+            
+            <Label Grid.Column="1"
+                Text="Player 2 : O"
+                   TextColor="DarkOrange"
+                FontFamily="poppinsextrabold"
+                VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,50,0,0"
+                FontSize="24"/>
+
+            </Grid>
+            
+            <Frame
+                x:Name="gridBox"
+                BackgroundColor="{Binding IndividualBoxColor}"
+                Margin="0,80,0,0"
+                CornerRadius="15"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="300"
+                HeightRequest="300">
+
+                <Frame x:Name="linesFrame" BackgroundColor="{Binding SeparatorLinesColor}" Padding="0" HasShadow="False">
+                    <Grid>
+                        <Grid Grid.Row="0" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="0" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="0" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="1" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="1" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="1" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="2" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="2" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Grid Grid.Row="2" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                </Grid>
+
+                </Frame>
+
+            </Frame>
+
+            <Frame
+       Margin="0,150,0,0"
+       BackgroundColor="DodgerBlue"
+       WidthRequest="150"
+       HeightRequest="20"
+       CornerRadius="50"
+       VerticalOptions="Center"
+       HorizontalOptions="Center">
+
+                <Label
+Text="Restart"
+FontFamily="poppinsregular"
+TextColor="White"   
+VerticalOptions="Center"
+HorizontalOptions="Center"/>
+                
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

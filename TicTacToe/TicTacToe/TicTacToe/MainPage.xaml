@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             x:Name="contentPage">
+
+    <StackLayout>
+        <Grid>
+            <Label Text="X"
+               WidthRequest="300"
+               Margin="-70,0,0,0"
+               FontFamily="poppinsextrabold"
+               TextColor="DodgerBlue"
+               FontSize="270"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+            <Label Text="O"
+               WidthRequest="300"
+               FontFamily="poppinsextrabold"
+               TextColor="DarkOrange"
+               Margin="185,0,0,0"
+               FontSize="270"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+        </Grid>
+
+        <Label
+            Text="Choose your play mode"
+            FontFamily="poppinsregular"
+            HorizontalOptions="CenterAndExpand"/>
+
+        <Frame Margin="0,30,0,0"
+       BackgroundColor="DodgerBlue"
+       WidthRequest="150"
+       HeightRequest="20"
+       CornerRadius="50"
+       VerticalOptions="Center"
+       HorizontalOptions="Center">
+            <Label
+Text="With AI"
+FontFamily="poppinsregular"
+TextColor="White"     
+VerticalOptions="Center"
+HorizontalOptions="Center"/>
+        </Frame>
+
+        <Frame
+            Margin="0,40,0,0"
+            x:Name="PlayWithPlayer"
+            BackgroundColor="DodgerBlue"
+            WidthRequest="150"
+            HeightRequest="20"
+            CornerRadius="50"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    NumberOfTapsRequired="1" Tapped="PlayWithPlayer_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Label
+     Text="With Friend"
+     FontFamily="poppinsregular"
+     TextColor="White"     
+     VerticalOptions="Center"
+     HorizontalOptions="Center"/>
+        </Frame>
+
+    </StackLayout>
+
+</ContentPage>

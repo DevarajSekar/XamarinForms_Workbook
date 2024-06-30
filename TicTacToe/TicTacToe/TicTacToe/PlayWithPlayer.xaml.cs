@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -33,21 +33,24 @@ namespace TicTacToe
         private Color individualBoxColor;
         private Color contentPageColor;
         private Color separatorLinesColor;
-        private string boxNumber1;
-        private string boxNumber2;
-        private string boxNumber3;
-        private string boxNumber4;
-        private string boxNumber5;
-        private string boxNumber6;
-        private string boxNumber7;
-        private string boxNumber8;
-        private string boxNumber9;
+        private string[] arrays = new string[9];
+        public ICommand TapCommand { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public PlayWithFirentViewModel()
         {
+            TapCommand = new Command(AddValue);
             SetTheme();
+        }
+
+        private void AddValue(object obj)
+        {
+            Button sender = (obj as Button);
+            arrays[Convert.ToInt32(sender.Text)] = "X";
+            sender.TextColor = Color.Black;
+            sender.Text = "X";
+            sender.IsEnabled = false;
         }
 
         public void SetTheme()
@@ -103,45 +106,6 @@ namespace TicTacToe
             {
                 separatorLinesColor = value;
                 OnPropertyChanged(nameof(SeparatorLinesColor));
-            }
-        }
-
-        public string BoxNumber1
-        {
-            get
-            {
-                return boxNumber1;
-            }
-            set
-            {
-                boxNumber1 = value;
-                OnPropertyChanged(nameof(BoxNumber1));
-            }
-        }
-
-        public string BoxNumber2
-        {
-            get
-            {
-                return boxNumber2;
-            }
-            set
-            {
-                boxNumber2 = value;
-                OnPropertyChanged(nameof(BoxNumber2));
-            }
-        }
-
-        public string BoxNumber3
-        {
-            get
-            {
-                return boxNumber3;
-            }
-            set
-            {
-                boxNumber3 = value;
-                OnPropertyChanged(nameof(BoxNumber3));
             }
         }
 

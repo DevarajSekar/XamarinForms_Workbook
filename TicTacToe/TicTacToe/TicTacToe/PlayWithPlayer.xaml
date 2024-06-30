@@ -41,15 +41,15 @@
 
                 <Frame x:Name="linesFrame" BackgroundColor="{Binding SeparatorLinesColor}" Padding="0" HasShadow="False">
                     <Grid>
-                        <Button x:Name="aa" TextColor="Transparent" Text="0" Command="{Binding TapCommand}" CommandParameter="{x:Reference aa}" Grid.Row="0" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="0" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="0" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="1" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="1" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="1" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="2" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="2" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
-                        <Button Grid.Row="2" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="aa" FontFamily="poppinsextrabold" FontSize="54" Text="0" Command="{Binding TapCommand}" CommandParameter="{x:Reference aa}" Grid.Row="0" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="ab" FontFamily="poppinsextrabold" FontSize="54" Text="1" Command="{Binding TapCommand}" CommandParameter="{x:Reference ab}" Grid.Row="0" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="ac" FontFamily="poppinsextrabold" FontSize="54" Text="2" Grid.Row="0" Command="{Binding TapCommand}" CommandParameter="{x:Reference ac}" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="ba" FontFamily="poppinsextrabold" FontSize="54" Text="3" Grid.Row="1" Command="{Binding TapCommand}" CommandParameter="{x:Reference ba}" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="bb" FontFamily="poppinsextrabold" FontSize="54" Text="4" Grid.Row="1" Command="{Binding TapCommand}" CommandParameter="{x:Reference bb}" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="bc" FontFamily="poppinsextrabold" FontSize="54" Text="5" Grid.Row="1" Command="{Binding TapCommand}" CommandParameter="{x:Reference bc}" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="ca" FontFamily="poppinsextrabold" FontSize="54" Text="6" Grid.Row="2" Command="{Binding TapCommand}" CommandParameter="{x:Reference ca}" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="cb" FontFamily="poppinsextrabold" FontSize="54" Text="7" Grid.Row="2" Command="{Binding TapCommand}" CommandParameter="{x:Reference cb}" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
+                        <Button TextColor="Transparent" x:Name="cc" FontFamily="poppinsextrabold" FontSize="54" Text="8" Grid.Row="2" Command="{Binding TapCommand}" CommandParameter="{x:Reference cc}" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
                 </Grid>
 
                 </Frame>
@@ -65,13 +65,20 @@
        VerticalOptions="Center"
        HorizontalOptions="Center">
 
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RestartCommand}" NumberOfTapsRequired="1"/>
+                </Frame.GestureRecognizers>
+
                 <Label
-Text="Restart"
+Text="Exit"
 FontFamily="poppinsregular"
-TextColor="White"   
+TextColor="White"  
+                    FontSize="18"
 VerticalOptions="Center"
-HorizontalOptions="Center"/>
-                
+HorizontalOptions="Center">
+                    
+                </Label>
+
             </Frame>
         </StackLayout>
     </ContentPage.Content>

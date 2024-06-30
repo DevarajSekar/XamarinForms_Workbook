@@ -35,6 +35,7 @@ namespace TicTacToe
         private Color contentPageColor;
         private Color separatorLinesColor;
         private Color textColor;
+        private bool parentIsEnabled;
         private string[] arrays = new string[9];
         public ICommand TapCommand { get; set; }
         public ICommand RestartCommand { get; set; }
@@ -46,6 +47,7 @@ namespace TicTacToe
         {
             TapCommand = new Command(AddValue);
             RestartCommand = new Command(Restart);
+            ParentIsEnabled = true;
             SetTheme();
         }
 
@@ -76,77 +78,21 @@ namespace TicTacToe
 
         private async void CheckResult()
         {
-            string winner = "Player 1 Winner";
             ////Row wise check
-            if (CheckRowsColsResult(0, 1, 2))
+            if (CheckRowsColsResult(0, 1, 2) || CheckRowsColsResult(3, 4, 5) || CheckRowsColsResult(6, 7, 8))
             {
-                if (arrays[0] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
-
-                await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
-            }
-
-            ////Row wise check
-            else if (CheckRowsColsResult(3, 4, 5))
-            {
-                if (arrays[3] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
-                await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
-            }
-
-            ////Row wise check
-            else if (CheckRowsColsResult(6, 7, 8))
-            {
-                if (arrays[6] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
                 await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
             }
 
             ////Column wise check
-            else if (CheckRowsColsResult(0, 3, 6))
+            else if (CheckRowsColsResult(0, 3, 6) || CheckRowsColsResult(1, 4, 7) || CheckRowsColsResult(2, 5, 8))
             {
-                if (arrays[0] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
-                await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
-            }
-
-            ////Column wise check
-            else if (CheckRowsColsResult(1, 4, 7))
-            {
-                if (arrays[1] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
-                await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
-            }
-
-            ////Column wise check
-            else if (CheckRowsColsResult(2, 5, 8))
-            {
-                if (arrays[2] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
                 await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
             }
 
             ////Diagonal wise check
-            else if (CheckRowsColsResult(0, 4, 8))
+            else if (CheckRowsColsResult(0, 4, 8) || CheckRowsColsResult(2, 4, 6))
             {
-                if (arrays[0] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
-                await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
-            }
-
-            ////Diagonal wise check
-            else if (CheckRowsColsResult(2, 4, 6))
-            {
-                if (arrays[2] == "O")
-                    winner = "Player 2 Winner";
-                await App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
                 await App.Current.MainPage.Navigation.PushAsync(new PlayWithPlayer());
             }
 
@@ -160,12 +106,16 @@ namespace TicTacToe
 
         bool CheckRowsColsResult(int i, int j, int k)
         {
+            string winner = "Player 1 Winner";
             if (!string.IsNullOrEmpty(arrays[i]) &&
                 !string.IsNullOrEmpty(arrays[j]) &&
                 !string.IsNullOrEmpty(arrays[k]) &&
                 arrays[i] == arrays[j] && arrays[j] == arrays[k])
             {
-
+                ParentIsEnabled = false;
+                if (arrays[i] == "O")
+                    winner = "Player 2 Winner";
+                App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
                 return true;
             }
             return false;
@@ -197,6 +147,19 @@ namespace TicTacToe
                 IndividualBoxColor = Color.White;
                 ContentPageColor = Color.White;
                 SeparatorLinesColor = Color.WhiteSmoke;
+            }
+        }
+
+        public bool ParentIsEnabled
+        {
+            get
+            {
+                return parentIsEnabled;
+            }
+            set
+            {
+                parentIsEnabled = value;
+                OnPropertyChanged(nameof(ParentIsEnabled));
             }
         }
 

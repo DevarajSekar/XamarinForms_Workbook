@@ -7,7 +7,7 @@
              x:Name="contentPage"
              >
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="ParentStack" IsEnabled="{Binding ParentIsEnabled}">
             <Grid>
             <Label Grid.Column="0"
                 Text="Player 1 : X"

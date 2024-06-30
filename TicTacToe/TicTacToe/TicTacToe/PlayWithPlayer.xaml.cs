@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace TicTacToe
@@ -40,6 +34,7 @@ namespace TicTacToe
         public ICommand TapCommand { get; set; }
         public ICommand RestartCommand { get; set; }
         string lasttext=string.Empty;
+        private float cornerRadius = 50;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -48,12 +43,14 @@ namespace TicTacToe
             TapCommand = new Command(AddValue);
             RestartCommand = new Command(Restart);
             ParentIsEnabled = true;
+            if (Device.iOS == "iOS")
+                CornerRadius = 30;
             SetTheme();
         }
 
         private void Restart(object obj)
         {
-            App.Current.MainPage.Navigation.PopAsync();
+            App.Current.MainPage.Navigation.PopToRootAsync();
         }
 
         private void AddValue(object obj)
@@ -160,6 +157,19 @@ namespace TicTacToe
             {
                 parentIsEnabled = value;
                 OnPropertyChanged(nameof(ParentIsEnabled));
+            }
+        }
+
+        public float CornerRadius
+        {
+            get
+            {
+                return cornerRadius;
+            }
+            set
+            {
+                cornerRadius = value;
+                OnPropertyChanged(nameof(CornerRadius));
             }
         }
 

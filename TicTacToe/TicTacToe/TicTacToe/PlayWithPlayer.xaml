@@ -7,7 +7,7 @@
              x:Name="contentPage"
              >
     <ContentPage.Content>
-        <StackLayout x:Name="ParentStack" IsEnabled="{Binding ParentIsEnabled}">
+        <StackLayout>
             <Grid>
             <Label Grid.Column="0"
                 Text="Player 1 : X"
@@ -40,7 +40,7 @@
                 HeightRequest="300">
 
                 <Frame x:Name="linesFrame" BackgroundColor="{Binding SeparatorLinesColor}" Padding="0" HasShadow="False">
-                    <Grid>
+                    <Grid x:Name="ParentGrid" IsEnabled="{Binding ParentIsEnabled}">
                         <Button TextColor="Transparent" x:Name="aa" FontFamily="poppinsextrabold" FontSize="54" Text="0" Command="{Binding TapCommand}" CommandParameter="{x:Reference aa}" Grid.Row="0" Grid.Column="0" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
                         <Button TextColor="Transparent" x:Name="ab" FontFamily="poppinsextrabold" FontSize="54" Text="1" Command="{Binding TapCommand}" CommandParameter="{x:Reference ab}" Grid.Row="0" Grid.Column="1" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
                         <Button TextColor="Transparent" x:Name="ac" FontFamily="poppinsextrabold" FontSize="54" Text="2" Grid.Row="0" Command="{Binding TapCommand}" CommandParameter="{x:Reference ac}" Grid.Column="2" Margin="-2" BackgroundColor="{Binding IndividualBoxColor}"/>
@@ -61,7 +61,7 @@
        BackgroundColor="DodgerBlue"
        WidthRequest="150"
        HeightRequest="20"
-       CornerRadius="50"
+       CornerRadius="{Binding CornerRadius}"
        VerticalOptions="Center"
        HorizontalOptions="Center">
 

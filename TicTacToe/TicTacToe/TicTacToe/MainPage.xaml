@@ -5,6 +5,7 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="White"
              x:Name="contentPage">
+    
 
     <StackLayout>
         <Grid>
@@ -32,21 +33,6 @@
             FontFamily="poppinsregular"
             HorizontalOptions="CenterAndExpand"/>
 
-        <Frame Margin="0,30,0,0"
-       BackgroundColor="DodgerBlue"
-       WidthRequest="150"
-       HeightRequest="20"
-       CornerRadius="50"
-       VerticalOptions="Center"
-       HorizontalOptions="Center">
-            <Label
-Text="With AI"
-FontFamily="poppinsregular"
-TextColor="White"     
-VerticalOptions="Center"
-HorizontalOptions="Center"/>
-        </Frame>
-
         <Frame
             Margin="0,40,0,0"
             x:Name="PlayWithPlayer"
@@ -69,6 +55,24 @@ HorizontalOptions="Center"/>
      HorizontalOptions="Center"/>
         </Frame>
 
-    </StackLayout>
+        <Frame Margin="0,30,0,0"
+       BackgroundColor="DodgerBlue"
+       WidthRequest="150"
+       HeightRequest="20"
+       CornerRadius="50"
+       VerticalOptions="Center"
+       HorizontalOptions="Center">
 
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="PlayWithAI_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Label
+Text="With AI"
+FontFamily="poppinsregular"
+TextColor="White"     
+VerticalOptions="Center"
+HorizontalOptions="Center"/>
+        </Frame>
+
+    </StackLayout>
 </ContentPage>

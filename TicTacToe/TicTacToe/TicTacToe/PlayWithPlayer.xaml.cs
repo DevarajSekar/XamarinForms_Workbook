@@ -103,7 +103,7 @@ namespace TicTacToe
 
         bool CheckRowsColsResult(int i, int j, int k)
         {
-            string winner = "Player 1 Winner";
+            string winner = "1";
             if (!string.IsNullOrEmpty(arrays[i]) &&
                 !string.IsNullOrEmpty(arrays[j]) &&
                 !string.IsNullOrEmpty(arrays[k]) &&
@@ -111,8 +111,8 @@ namespace TicTacToe
             {
                 ParentIsEnabled = false;
                 if (arrays[i] == "O")
-                    winner = "Player 2 Winner";
-                App.Current.MainPage.DisplayAlert("Winner!!", winner, "OK");
+                    winner = "2";
+                App.Current.MainPage.DisplayAlert("Winner!!", "Player " + winner + " Wins", "OK");
                 return true;
             }
             return false;

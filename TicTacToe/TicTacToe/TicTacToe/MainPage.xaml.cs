@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace TicTacToe
 {
@@ -37,6 +33,11 @@ namespace TicTacToe
         private void PlayWithPlayer_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PlayWithPlayer());
+        }
+
+        void PlayWithAI_Tapped(System.Object sender, System.EventArgs e)
+        {
+            DisplayAlert("OOP's we are under construction ", " Please play with friend ", " Close ");
         }
     }
 }
